@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Custom Entities</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="customEntity: ${customEntities}">
+                <td th:text="${customEntity.id}"></td>
+                <td th:text="${customEntity.title}"></td>
+                <td th:text="${customEntity.descr}"></td>
+                <td><a class="btn btn-danger" th:href="@{/delete/{id}(id=${customEntity.id})}">Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/add" class="btn btn-primary">Add Student</a>
+
+
+</body>
+</html>
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+
+<!--<head>-->
+<!--    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />-->
+<!--    <title>Home</title>-->
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">-->
+<!--</head>-->
+<!--<body>-->
+<!--<p th:text="Hello,  + !" />-->
+<!--    <table class="table table-striped">-->
+<!--        <thead>-->
+<!--            <tr>-->
+<!--                <th scope="col">Id</th>-->
+<!--                <th scope="col">Title</th>-->
+<!--                <th scope="col">Description</th>-->
+<!--                <th scope="col">Actions</th>-->
+<!--            </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--            <tr th:each="customentity: ${customentities}">-->
+<!--                <td th:text="${customentity.id}"></td>-->
+<!--                <td th:text="${customentity.title}"></td>-->
+<!--                <td th:text="${customentity.descr}"></td>-->
+<!--            </tr>-->
+<!--        </tbody>-->
+<!--    </table>-->
+<!--    <a th:href="${/add}" class="btn btn-primary">Add Student</a>-->
+<!--</body>-->
+<!--</html>-->
+
+<!--<style>-->
+<!--    body {-->
+<!--        text-align: center;-->
+<!--    }-->
+<!--</style>-->

@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add a Custom Entity</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+    <h1>Add CustomEntity</h1>
+    <form th:object="${customEntity}" th:action="@{/save}" method="post" >
+        <input type="text" th:field="*{title}" class="form-control" placeholder="Title"/>
+        <input type="text" th:field="*{descr}" class="form-control" placeholder="Description"/>
+        <input type="submit" value="Submit" />
+    </form>
+</body>
+</html>
