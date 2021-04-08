@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body class="vh-100 d-flex bg-muted flex-column">
+    <form action="#" th:action="@{/login}" method="post" style="max-width: 700px;" class="m-auto w-50">
+        <div th:if="${error}"  class="text-center" style="color: red; font-size: 1.5rem">
+            <strong>Incorrect Credentials.</strong>
+        </div>
+
+        <div class="form-group">
+            <label for="username">Username: </label>
+            <input type="text" id="username" name="username" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="password">Password: </label>
+            <input type="password" id="password" name="password" class="form-control"/>
+        </div>
+        <button type="submit" class="btn btn-outline-success btn-block p-2">Log in</button>
+    </form>
+</body>
+</html>
+
+<style>
+
+</style>
